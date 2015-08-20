@@ -19,16 +19,18 @@
             recipeCategories = new RecipeCategories();
             categories.forEach((category) => {
                 var foodGroups: FoodGroup[] = [];
+
                 category.foodGroups.forEach((foodGroup) => {
                     var group = new FoodGroup();
-                    group.name = foodGroup.title; 
-                foodGroups.push(group);
-            });
+                    group.name = foodGroup.title;
+                    foodGroups.push(group);
+                });
+
                 var recipeCategory = new BaseRecipeCategory();
                 recipeCategory.name = category.title;
                 recipeCategory.foodGroups = foodGroups;
 
-            recipeCategories.items.push(recipeCategory);
+                recipeCategories.items.push(recipeCategory);
             });
             
             //Render the categories into the select
