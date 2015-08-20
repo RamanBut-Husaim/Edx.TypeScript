@@ -15,6 +15,6 @@
     };
 
     set foodGroups(theFoodGroups: FoodGroup[]) {
-        this._foodGroups = theFoodGroups;
+        this._foodGroups = theFoodGroups || [];
     }
 } 
