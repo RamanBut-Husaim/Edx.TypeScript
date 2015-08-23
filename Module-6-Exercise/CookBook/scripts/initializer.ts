@@ -22,8 +22,3 @@ function loadRecipes() {
     }
     catch (ex) { alert(ex.message) }
 }
-  
-
-
-
-
