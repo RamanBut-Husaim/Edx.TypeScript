@@ -1,13 +1,25 @@
-﻿//TODO: 
-//Modify this class to it implements the IBaseRecipeCategory interface
+﻿class BaseRecipeCategory implements IBaseRecipeCategory {
+    private _name: string;
+    private _foodGroups: FoodGroup[] = [];
 
-class BaseRecipeCategory {
-    name: string;
-    foodGroups: FoodGroup[] = [];
+    constructor(name: string, foodGroups: FoodGroup[]) {
+        this._name = name;
+        this._foodGroups = foodGroups || [];
+    }
 
-    //FROM MODULE 6:
-    //Add constructor using the variable names above
-    //as the parameters (so you'll have two parameters). 
-    //Assign the parameter value to the associated member variables.
-    
-} 
+    get name(): string {
+        return this._name;
+    }
+
+    set name(theName: string) {
+        this._name = theName;
+    }
+
+    get foodGroups(): FoodGroup[] {
+        return this._foodGroups;
+    }
+
+    set foodGroups(theFoodGroups: FoodGroup[]) {
+        this._foodGroups = theFoodGroups || [];
+    }
+}
