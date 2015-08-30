@@ -6,4 +6,4 @@
         this.name = name;
         this.foodGroups = foodGroups || [];
     }
-} 
+}
