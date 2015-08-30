@@ -12,15 +12,9 @@ class RecipeLoader {
     mapData(data) {
         if (data) {
             var categories: any[] = data.recipeCategories;
-            //TODO
-            //Change RecipeCategories to use the new generic type.
-            //Pass IRecipeCategory as the type
-            recipeCategories = new RecipeCategories();
+            recipeCategories = new RecipeCategories<IRecipeCategory>();
 
-            //TODO
-            //Create a new RecipeCategories object named recipeCategoriesSummary
-            //and pass an IRecipeCategorySummary as the generic value.
-            
+            var recipeCategoriesSummary = new RecipeCategories<IRecipeCategorySummary>();
             categories.forEach((category) => {
                 var recipeCategory = new RecipeCategory({
                     name: category.title,
@@ -30,14 +24,8 @@ class RecipeLoader {
                 });
                 recipeCategories.items.push(recipeCategory);
 
-                //TODO
-                //Create a new RecipeCategorySummary instance and pass
-                //the category.title and category.details into the constructor.
-                //Once the class is created add it into the recipeCategoriesSummary
-                //object's items collection
-                //HINT: The constructor object passed must match the IRecipeCategorySummary interface
-                //HINT: Use the push() function
-                
+                var recipeCategorySummary = new RecipeCategorySummary(category.title, category.details);
+                recipeCategoriesSummary.items.push(recipeCategorySummary);
             });
             
             //Render the categories into the select

@@ -1,10 +1,15 @@
-﻿class FoodGroup implements IFoodGroup{
-    name: string;
+﻿class FoodGroup implements IFoodGroup {
+    private _name: string;
 
     constructor(name: string) {
-        //FROM MODULES 6-8:
-        //Assign the "name" parameter to the 
-        //"name" member variable
+        this._name = name;
     }
 
+    get name(): string {
+        return this._name;
+    }
+
+    set name(theName: string) {
+        this._name = theName;
+    }
 } 
