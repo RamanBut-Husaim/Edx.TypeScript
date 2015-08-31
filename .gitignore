@@ -198,3 +198,4 @@ FakesAssemblies/
 # Files genereted by typescript compiler
 *.js
 *.js.map
+!jquery*.js
